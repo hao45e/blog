@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title></title>
+        <subtitle></subtitle>
+        <icon>http://blog.hao45e.club/images/favicon.ico</icon>
+        <link>http://blog.hao45e.club</link>
+        <author>
+          <name>神之浩</name>
+        </author>
+        <description></description>
+        <language>zh-CN,en,default</language>
+        <pubDate>Mon, 19 Oct 2020 21:25:22 +0800</pubDate>
+        <lastBuildDate>Mon, 19 Oct 2020 21:25:22 +0800</lastBuildDate>
+        <item>
+            <guid isPermalink="true">http://blog.hao45e.club/2020/10/19/%E4%BD%BF%E7%94%A8JSProxy%E5%92%8CWorkers%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%BB%A3%E7%90%86/</guid>
+            <title>使用JSProxy和Workers免费搭建代理</title>
+            <link>http://blog.hao45e.club/2020/10/19/%E4%BD%BF%E7%94%A8JSProxy%E5%92%8CWorkers%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%BB%A3%E7%90%86/</link>
+            <category term="代理" scheme="http://blog.hao45e.club/categories/%E4%BB%A3%E7%90%86/" />
+            <category term="cloudflare" scheme="http://blog.hao45e.club/tags/cloudflare/" />
+            <pubDate>Mon, 19 Oct 2020 21:25:22 +0800</pubDate>
+            <description><![CDATA[ &lt;div class=&#34;note danger&#34;&gt;
+&lt;p&gt;不建议输入任何隐私内容和登陆任何网站账号&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;note info&#34;&gt;
+&lt;p&gt;JSProxy: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL0V0aGVyRHJlYW0vanNwcm94eQ==&#34;&gt;https://github.com/EtherDream/jsproxy&lt;/span&gt;&lt;br /&gt;
+Cloudflare Workers: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93b3JrZXJzLmNsb3VkZmxhcmUuY29t&#34;&gt;https://workers.cloudflare.com&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;把jsproxy-fork-到自己的github-repositories中&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#把jsproxy-fork-到自己的github-repositories中&#34;&gt;#&lt;/a&gt; 把 JSProxy fork 到自己的 GitHub Repositories 中&lt;/h1&gt;
+&lt;p&gt;点击&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL0V0aGVyRHJlYW0vanNwcm94eQ==&#34;&gt; JSProxy&lt;/span&gt;，进入后点击右上角 fork 到自己到存储库中 (方便&lt;a href=&#34;#%E9%AB%98%E7%BA%A7&#34;&gt;高级&lt;/a&gt;的更改，如果不使用高级此步骤可跳过)&lt;br /&gt;
+&lt;img data-src=&#34;https://hao45e-static-file.oss-cn-beijing.aliyuncs.com/blog/static/images/20201018/20201018010514.png&#34; alt=&#34;fork to yourself repositories&#34; /&gt;&lt;/p&gt;
+&lt;h1 id=&#34;创建一个cloudflare-workers项目&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#创建一个cloudflare-workers项目&#34;&gt;#&lt;/a&gt; 创建一个 Cloudflare Workers 项目&lt;/h1&gt;
+&lt;p&gt;打开&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93b3JrZXJzLmNsb3VkZmxhcmUuY29tLw==&#34;&gt; Workers&lt;/span&gt; ，登陆 Cloudflare 账号激活 workers 服务&lt;br /&gt;
+使用免费计划即可 (每天可以请求十万次 &lt;span class=&#34;spoiler&#34; title=&#34;你知道得太多了&#34;&gt;如果不够可以多创建几个账号&lt;/span&gt;)&lt;br /&gt;
+ 需要填写一个子域名 (***.workers.dev)&lt;/p&gt;
+&lt;h2 id=&#34;创建worker&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#创建worker&#34;&gt;#&lt;/a&gt; 创建 Worker&lt;/h2&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://hao45e-static-file.oss-cn-beijing.aliyuncs.com/blog/static/images/20201018/20201018010824.png&#34; alt=&#34;创建Worker&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;粘贴js脚本&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#粘贴js脚本&#34;&gt;#&lt;/a&gt; 粘贴 JS 脚本&lt;/h2&gt;
+&lt;p&gt;将 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL0V0aGVyRHJlYW0vanNwcm94eS9ibG9iL21hc3Rlci9jZi13b3JrZXIvaW5kZXguanM=&#34;&gt;https://github.com/EtherDream/jsproxy/blob/master/cf-worker/index.js&lt;/span&gt; 中的 js 代码复制进刚创建好的 worker 脚本里&lt;br /&gt;
+&lt;img data-src=&#34;https://hao45e-static-file.oss-cn-beijing.aliyuncs.com/blog/static/images/20201018/20201018013311.png&#34; alt=&#34;添加JS脚本&#34; /&gt;&lt;br /&gt;
+打开后的页面就是这个样子，输入网址，点击 Go 即可&lt;br /&gt;
+&lt;img data-src=&#34;https://hao45e-static-file.oss-cn-beijing.aliyuncs.com/blog/static/images/20201018/20201018013520.png&#34; alt=&#34;jsproxy页面&#34; /&gt;&lt;br /&gt;
+进入通过 js 代理的页面，链接地址前面即是 jsproxy 页面的地址，后面是代理出去的地址&lt;br /&gt;
+&lt;img data-src=&#34;https://hao45e-static-file.oss-cn-beijing.aliyuncs.com/blog/static/images/20201018/20201018014514.png&#34; alt=&#34;duckduckgo&#34; /&gt;&lt;/p&gt;
+&lt;h1 id=&#34;高级&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#高级&#34;&gt;#&lt;/a&gt; 高级&lt;/h1&gt;
+&lt;h2 id=&#34;访问次数限制&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#访问次数限制&#34;&gt;#&lt;/a&gt; 访问次数限制&lt;/h2&gt;
+&lt;p&gt;由于注册 Cloudflare 时并没有验证邮箱，可以注册多个账号，进行同样的操作，这样就可以解决掉每日访问量太大的问题了，但是因为需要切换 worker 的地址比较麻烦，可以尝试进行&lt;span class=&#34;label warning&#34;&gt; TODO&lt;/span&gt; 页面版的负载均衡&lt;/p&gt;
+&lt;h2 id=&#34;使用自定义页面&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用自定义页面&#34;&gt;#&lt;/a&gt; 使用自定义页面&lt;/h2&gt;
+&lt;p&gt;进行页面调整，更改配置，以及页面版负载均衡&lt;/p&gt;
+&lt;h3 id=&#34;使用github-pages部署自定义页面&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用github-pages部署自定义页面&#34;&gt;#&lt;/a&gt; 使用 GitHub Pages 部署自定义页面&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;使用 GitHub Pages 将 fork 下来的 jsproxy 的 gh-pages 分支进行部署，可以参考另一篇博客&lt;a href=&#34;/2020/10/18/%E4%BD%BF%E7%94%A8GitHubPages%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2/&#34;&gt;使用 GitHubPages 搭建静态页面&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;将写在 workers 脚本里的 ASSET_URL 换成自己的&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&#34;highlight javascript&#34;&gt;&lt;figcaption data-lang=&#34;javascript&#34;&gt;&lt;span&gt;替换ASSET_URL&lt;/span&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9iYWlkdS5jb20=&#34;&gt;参考链接&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;token constant&#34;&gt;ASSET_URL&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;https://etherdream.github.io/jsproxy&#39;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;// 替换成&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;token constant&#34;&gt;ASSET_URL&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;https://[username].github.io/jsproxy&#39;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;//username 是你的 github 用户名&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;更改 gh-pages 分支的 conf.js 和 assets/index_v3.html&lt;/li&gt;
+&lt;/ol&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://blog.hao45e.club/2020/10/18/%E4%BD%BF%E7%94%A8GitHubPages%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2/</guid>
+            <title>使用GitHubPages搭建静态页面</title>
+            <link>http://blog.hao45e.club/2020/10/18/%E4%BD%BF%E7%94%A8GitHubPages%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2/</link>
+            <category term="代理" scheme="http://blog.hao45e.club/categories/%E4%BB%A3%E7%90%86/" />
+            <category term="github" scheme="http://blog.hao45e.club/tags/github/" />
+            <pubDate>Sun, 18 Oct 2020 19:45:23 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;以jsproxy为例点击settings&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#以jsproxy为例点击settings&#34;&gt;#&lt;/a&gt; 以 JSProxy 为例，点击 Settings&lt;/h1&gt;
+&lt;p&gt;JSProxy 需要部署的页面在 gh-pages 分支中&lt;br /&gt;
+&lt;img data-src=&#34;https://hao45e-static-file.oss-cn-beijing.aliyuncs.com/blog/static/images/20201018/20201018195635.png&#34; alt=&#34;点击settings&#34; /&gt;&lt;/p&gt;
+&lt;h1 id=&#34;使用github-pages将jspxory的gh-pages分支进行部署&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用github-pages将jspxory的gh-pages分支进行部署&#34;&gt;#&lt;/a&gt; 使用 GitHub Pages 将 jspxory 的 gh-pages 分支进行部署&lt;/h1&gt;
+&lt;p&gt;下拉至 GitHub Pages，选择要部署的分支以及目录，点击 Save 保存&lt;br /&gt;
+之后即可在 http://[username].github.io/[repository] 访问静态页面 (例如：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ldGhlcmRyZWFtLmdpdGh1Yi5pby9qc3Byb3h5&#34;&gt;https://etherdream.github.io/jsproxy&lt;/span&gt;)&lt;br /&gt;
+&lt;img data-src=&#34;https://hao45e-static-file.oss-cn-beijing.aliyuncs.com/blog/static/images/20201018/20201018200105.png&#34; alt=&#34;保存GitHub Pages&#34; /&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>
