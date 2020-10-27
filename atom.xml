@@ -13,9 +13,9 @@
         <id>http://blog.hao45e.club/2020/10/19/%E4%BD%BF%E7%94%A8JSProxy%E5%92%8CWorkers%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%BB%A3%E7%90%86/</id>
         <title>使用JSProxy和Workers免费搭建代理</title>
         <link rel="alternate" href="http://blog.hao45e.club/2020/10/19/%E4%BD%BF%E7%94%A8JSProxy%E5%92%8CWorkers%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%BB%A3%E7%90%86/"/>
-        <content type="html">&lt;div class=&#34;note danger&#34;&gt;
-&lt;p&gt;不建议输入任何隐私内容和登陆任何网站账号&lt;/p&gt;
-&lt;/div&gt;
+        <content type="html">&lt;p&gt;&amp;lt;!-- :::danger&lt;br /&gt;
+ 不建议输入任何隐私内容和登陆任何网站账号&lt;br /&gt;
+::: --&amp;gt;&lt;/p&gt;
 &lt;div class=&#34;note info&#34;&gt;
 &lt;p&gt;JSProxy: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL0V0aGVyRHJlYW0vanNwcm94eQ==&#34;&gt;https://github.com/EtherDream/jsproxy&lt;/span&gt;&lt;br /&gt;
 Cloudflare Workers: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93b3JrZXJzLmNsb3VkZmxhcmUuY29t&#34;&gt;https://workers.cloudflare.com&lt;/span&gt;&lt;/p&gt;
