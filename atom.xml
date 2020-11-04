@@ -8,7 +8,61 @@
     <author>
       <name>神之浩</name>
     </author>
-    <updated>2020-10-19T13:25:22.000Z</updated>
+    <updated>2020-11-03T13:00:02.000Z</updated>
+    <entry>
+        <id>http://blog.hao45e.club/2020/11/03/Shadowsocks%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85/</id>
+        <title>Shadowsocks一键安装</title>
+        <link rel="alternate" href="http://blog.hao45e.club/2020/11/03/Shadowsocks%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85/"/>
+        <content type="html">&lt;div class=&#34;note info&#34;&gt;
+&lt;p&gt;秋水逸冰《Shadowsocks 一键安装脚本（四合一）》&lt;/p&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;本脚本适用环境&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#本脚本适用环境&#34;&gt;#&lt;/a&gt; 本脚本适用环境&lt;/h1&gt;
+&lt;p&gt;系统支持：CentOS6+，Debian7+，Ubuntu12+&lt;/p&gt;
+&lt;h1 id=&#34;关于本脚本&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#关于本脚本&#34;&gt;#&lt;/a&gt; 关于本脚本&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;一键安装 Shadowsocks-Python，ShadowsocksR，Shadowsocks-Go，Shadowsocks-libev 版（四选一）服务端；&lt;/li&gt;
+&lt;li&gt;各版本的启动脚本及配置文件名不再重合；&lt;/li&gt;
+&lt;li&gt;每次运行可安装一种版本；&lt;/li&gt;
+&lt;li&gt;支持以多次运行来安装多个版本，且各个版本可以共存（注意端口号需设成不同）；&lt;/li&gt;
+&lt;li&gt;若已安装多个版本，则卸载时也需多次运行（每次卸载一种）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;默认配置&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#默认配置&#34;&gt;#&lt;/a&gt; 默认配置&lt;/h1&gt;
+&lt;pre class=&#34;info&#34;&gt;&lt;code&gt;服务器端口：自己设定（如不设定，默认从 9000-19999 之间随机生成）
+密码：自己设定（如不设定，默认为 teddysun.com）
+加密方式：自己设定（如不设定，Python 和 libev 版默认为 aes-256-gcm，R 和 Go 版默认为 aes-256-cfb）
+协议 (protocol)：自己设定（如不设定，默认为 origin）（仅限 ShadowsocksR 版）
+混淆 (obfs)：自己设定（如不设定，默认为 plain）（仅限 ShadowsocksR 版）
+备注：脚本默认创建单用户配置文件，如需配置多用户，请手动修改相应的配置文件后重启即可。&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;使用方法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用方法&#34;&gt;#&lt;/a&gt; 使用方法&lt;/h1&gt;
+&lt;h2 id=&#34;使用root用户登陆运行以下命令&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用root用户登陆运行以下命令&#34;&gt;#&lt;/a&gt; 使用 root 用户登陆，运行以下命令&lt;/h2&gt;
+&lt;div class=&#34;note warning&#34;&gt;
+&lt;p&gt;raw.githubusercontent.com 在国内是无法访问的，所以这个脚本是在可以访问&lt;span class=&#34;spoiler bulr&#34; title=&#34;你知道得太多了&#34;&gt;外网&lt;/span&gt;的服务器上执行的  &lt;span class=&#34;spoiler&#34; title=&#34;你知道得太多了&#34;&gt;懂的自然懂&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;wget&lt;/span&gt; --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;chmod&lt;/span&gt; +x shadowsocks-all.sh&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;./shadowsocks-all.sh &lt;span class=&#34;token operator&#34;&gt;&lt;span class=&#34;token file-descriptor important&#34;&gt;2&lt;/span&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token file-descriptor important&#34;&gt;&amp;amp;1&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;tee&lt;/span&gt; shadowsocks-all.log&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;安装完成后脚本提示如下&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装完成后脚本提示如下&#34;&gt;#&lt;/a&gt; 安装完成后，脚本提示如下&lt;/h2&gt;
+&lt;figure class=&#34;highlight raw&#34;&gt;&lt;figcaption data-lang=&#34;&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Congratulations, your_shadowsocks_version install completed!&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Your Server IP :your_server_ip&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Your Server Port :your_server_port&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Your Password :your_password&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Your Encryption Method:your_encryption_method&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Your QR Code: (For Shadowsocks Windows, OSX, Android and iOS clients)&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;ss:&amp;#x2F;&amp;#x2F;your_encryption_method:your_password@your_server_ip:your_server_port&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Your QR Code has been saved as a PNG file path:&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;your_path.png&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Enjoy it!&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;卸载方法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#卸载方法&#34;&gt;#&lt;/a&gt; 卸载方法&lt;/h2&gt;
+&lt;div class=&#34;note primary&#34;&gt;
+&lt;p&gt;若已安装多个版本，则卸载时也需多次运行（每次卸载一种）&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;使用 root 用户登陆，运行以下命令&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;./shadowsocks-all.sh uninstall&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;启动脚本&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#启动脚本&#34;&gt;#&lt;/a&gt; 启动脚本&lt;/h2&gt;
+&lt;div class=&#34;note primary&#34;&gt;
+&lt;p&gt;启动脚本后面的参数含义，从左至右依次为：启动，停止，重启，查看状态。&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Shadowsocks-Python 版：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;Shadowsocks-Python 版&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/etc/init.d/shadowsocks-python start &lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt; stop &lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt; restart &lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt; status&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;ShadowsocksR 版：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;ShadowsocksR 版&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/etc/init.d/shadowsocks-r start &lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt; stop &lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt; restart &lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt; status&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;Shadowsocks-Go 版：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;Shadowsocks-Go 版&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/etc/init.d/shadowsocks-go start &lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt; stop &lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt; restart &lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt; status&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;Shadowsocks-libev 版：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;Shadowsocks-libev 版&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/etc/init.d/shadowsocks-libev start &lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt; stop &lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt; restart &lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt; status&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;div class=&#34;note primary&#34;&gt;
+&lt;p&gt;各版本默认配置&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Shadowsocks-Python 版：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;Shadowsocks-Python 版&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/etc/shadowsocks-python/config.json&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;ShadowsocksR 版：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;ShadowsocksR 版&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/etc/shadowsocks-r/config.json&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;Shadowsocks-Go 版：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;Shadowsocks-Go 版&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/etc/shadowsocks-go/config.json&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;Shadowsocks-libev 版：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;Shadowsocks-libev 版&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/etc/shadowsocks-libev/config.json&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
+        <category term="代理" scheme="http://blog.hao45e.club/categories/%E4%BB%A3%E7%90%86/" />
+        <category term="SSR" scheme="http://blog.hao45e.club/tags/SSR/" />
+        <updated>2020-11-03T13:00:02.000Z</updated>
+    </entry>
     <entry>
         <id>http://blog.hao45e.club/2020/10/19/%E4%BD%BF%E7%94%A8JSProxy%E5%92%8CWorkers%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%BB%A3%E7%90%86/</id>
         <title>使用JSProxy和Workers免费搭建代理</title>
