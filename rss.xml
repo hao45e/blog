@@ -10,8 +10,22 @@
         </author>
         <description></description>
         <language>zh-CN,en,default</language>
-        <pubDate>Tue, 03 Nov 2020 21:00:02 +0800</pubDate>
-        <lastBuildDate>Tue, 03 Nov 2020 21:00:02 +0800</lastBuildDate>
+        <pubDate>Thu, 31 Dec 2020 23:13:00 +0800</pubDate>
+        <lastBuildDate>Thu, 31 Dec 2020 23:13:00 +0800</lastBuildDate>
+        <item>
+            <guid isPermalink="true">http://blog.hao45e.club/2020/12/31/KMS%E6%BF%80%E6%B4%BBWindows10/</guid>
+            <title>KMS激活Windows10</title>
+            <link>http://blog.hao45e.club/2020/12/31/KMS%E6%BF%80%E6%B4%BBWindows10/</link>
+            <category term="实用工具箱" scheme="http://blog.hao45e.club/categories/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7%E7%AE%B1/" />
+            <category term="windows" scheme="http://blog.hao45e.club/tags/windows/" />
+            <category term="激活" scheme="http://blog.hao45e.club/tags/%E6%BF%80%E6%B4%BB/" />
+            <pubDate>Thu, 31 Dec 2020 23:13:00 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;联网可用：&lt;br /&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly92MHYuYmlkLw==&#34;&gt;https://v0v.bid/&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;离线可用：&lt;br /&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL2tra2dvL0tNU19WTF9BTEw=&#34;&gt;https://github.com/kkkgo/KMS_VL_ALL&lt;/span&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://blog.hao45e.club/2020/11/03/Shadowsocks%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85/</guid>
             <title>Shadowsocks一键安装</title>
