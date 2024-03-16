@@ -16,6 +16,9 @@
             <guid isPermalink="true">http://blog.hao45e.club/2024/03/16/Elasticsearch%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
             <title>Elasticsearch常用命令</title>
             <link>http://blog.hao45e.club/2024/03/16/Elasticsearch%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+            <category term="笔记" scheme="http://blog.hao45e.club/categories/%E7%AC%94%E8%AE%B0/" />
+            <category term="es" scheme="http://blog.hao45e.club/tags/es/" />
+            <category term="kibana" scheme="http://blog.hao45e.club/tags/kibana/" />
             <pubDate>Sat, 16 Mar 2024 23:15:25 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;集群节点操作&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#集群节点操作&#34;&gt;#&lt;/a&gt; 集群节点操作&lt;/h1&gt;
 &lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 查看集群健康状态&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;GET /_cluster/health&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;GET /_cat/health?v&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 查看节点状态&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;GET /_cat/nodes?v&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;GET /_nodes/stats&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h1 id=&#34;索引操作&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#索引操作&#34;&gt;#&lt;/a&gt; 索引操作&lt;/h1&gt;
@@ -29,6 +32,7 @@
             <title>Docker安装Elasticsearch&amp;Kibana</title>
             <link>http://blog.hao45e.club/2024/03/15/Docker%E5%AE%89%E8%A3%85Elasticsearch&amp;Kibana/</link>
             <category term="安装" scheme="http://blog.hao45e.club/categories/%E5%AE%89%E8%A3%85/" />
+            <category term="es" scheme="http://blog.hao45e.club/tags/es/" />
             <category term="docker" scheme="http://blog.hao45e.club/tags/docker/" />
             <pubDate>Fri, 15 Mar 2024 11:33:34 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;docker安装elasticsearch&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#docker安装elasticsearch&#34;&gt;#&lt;/a&gt; Docker 安装 Elasticsearch&lt;/h1&gt;
