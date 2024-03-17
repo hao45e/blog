@@ -88,12 +88,12 @@
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://api.yimian.xyz/img?909046"></li>
-          <li class="item" data-background-image="https://api.yimian.xyz/img?347356"></li>
-          <li class="item" data-background-image="https://api.yimian.xyz/img?95754"></li>
-          <li class="item" data-background-image="https://api.yimian.xyz/img?952149"></li>
-          <li class="item" data-background-image="https://api.yimian.xyz/img?450837"></li>
-          <li class="item" data-background-image="https://api.yimian.xyz/img?382172"></li>
+          <li class="item" data-background-image="https://api.yimian.xyz/img?528237"></li>
+          <li class="item" data-background-image="https://api.yimian.xyz/img?413719"></li>
+          <li class="item" data-background-image="https://api.yimian.xyz/img?988009"></li>
+          <li class="item" data-background-image="https://api.yimian.xyz/img?482744"></li>
+          <li class="item" data-background-image="https://api.yimian.xyz/img?339993"></li>
+          <li class="item" data-background-image="https://api.yimian.xyz/img?715770"></li>
         </ul>
       </div>
     </header>
@@ -120,7 +120,104 @@
         
 <article class="item">
   <div class="cover">
-    <a href="/2024/03/16/Elasticsearch%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" itemprop="url" title="Elasticsearch常用命令"><img data-src="https://api.yimian.xyz/img?548898"></a>
+    <a href="/2024/03/17/MongoDB%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" itemprop="url" title="MongoDB常用命令"><img data-src="https://api.yimian.xyz/img?301436"></a>
+  </div>
+  <div class="info">
+    
+<div class="meta">
+  <span class="item" title="创建时间：2024-03-17 11:38:18">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <time itemprop="dateCreated datePublished" datetime="2024-03-17T11:38:18+08:00">2024-03-17</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span>1k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span>1 分钟</span>
+  </span>
+</div>
+
+    <h3><a href="/2024/03/17/MongoDB%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" itemprop="url" title="MongoDB常用命令">MongoDB常用命令</a></h3>
+    <div class="excerpt">
+        # 数据库操作
+# 显示所有数据库
+show databasesshow dbs# 切换数据库
+use my_db# 集合操作
+# 显示所有集合
+show conllectionsshow tables# 创建集合
+db.createCollection(&#39;test111&#39;)# 删除集合
+db.test111.drop()# 文档操作
+# 插入文档
+db.test111.insertOne(&amp;#123;id:1,name:&#39;章三&#39;,age:10,text:&#39;天天好无聊&#39;&amp;#125;)# 更新文档
+//...
+    </div>
+    <div class="meta footer">
+      <span>
+        <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" title="笔记"><i class="ic i-flag"></i>笔记</a>
+      </span>
+    </div>
+    <a href="/2024/03/17/MongoDB%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" itemprop="url" title="MongoDB常用命令" class="btn">more...</a>
+  </div>
+</article>
+
+        
+<article class="item">
+  <div class="cover">
+    <a href="/2024/03/17/Docker%E5%AE%89%E8%A3%85MongoDB/" itemprop="url" title="Docker安装MongoDB"><img data-src="https://api.yimian.xyz/img?10673"></a>
+  </div>
+  <div class="info">
+    
+<div class="meta">
+  <span class="item" title="创建时间：2024-03-17 10:38:42">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <time itemprop="dateCreated datePublished" datetime="2024-03-17T10:38:42+08:00">2024-03-17</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span>386</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span>1 分钟</span>
+  </span>
+</div>
+
+    <h3><a href="/2024/03/17/Docker%E5%AE%89%E8%A3%85MongoDB/" itemprop="url" title="Docker安装MongoDB">Docker安装MongoDB</a></h3>
+    <div class="excerpt">
+        # 拉取 MongoDB Docker 镜像
+docker pull mongo# 创建并启动 MongoDB 容器 (并开启认证)
+docker run -d --name my-mongo -p 27017:27017 mongo --auth# 进入容器添加用户
+# 进入 my-mongo 容器docker exec -it my-mongo /bin/bash# 连接 mongo shellmongosh# 切换到 admin 数据库use admin# 创建管理员用户db.createUser(&amp;#123;...
+    </div>
+    <div class="meta footer">
+      <span>
+        <a href="/categories/%E5%AE%89%E8%A3%85/" itemprop="url" title="安装"><i class="ic i-flag"></i>安装</a>
+      </span>
+    </div>
+    <a href="/2024/03/17/Docker%E5%AE%89%E8%A3%85MongoDB/" itemprop="url" title="Docker安装MongoDB" class="btn">more...</a>
+  </div>
+</article>
+
+        
+<article class="item">
+  <div class="cover">
+    <a href="/2024/03/16/Elasticsearch%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" itemprop="url" title="Elasticsearch常用命令"><img data-src="https://api.yimian.xyz/img?281330"></a>
   </div>
   <div class="info">
     
@@ -164,7 +261,7 @@
         
 <article class="item">
   <div class="cover">
-    <a href="/2024/03/15/Docker%E5%AE%89%E8%A3%85Elasticsearch&Kibana/" itemprop="url" title="Docker安装Elasticsearch&amp;Kibana"><img data-src="https://api.yimian.xyz/img?340301"></a>
+    <a href="/2024/03/15/Docker%E5%AE%89%E8%A3%85Elasticsearch&Kibana/" itemprop="url" title="Docker安装Elasticsearch&amp;Kibana"><img data-src="https://api.yimian.xyz/img?388876"></a>
   </div>
   <div class="info">
     
@@ -195,7 +292,7 @@
         # Docker 安装 Elasticsearch
 # 创建名为 elastic 的 docker 网络
 docker network create elastic# 拉取 Elasticsearch Docker 镜像
-docker pull docker.elastic.co/elasticsearch/elasticsearch:8.12.2# 启动 Elasticsearch 容器
+docker pull docker.elastic.co/elasticsearch/elasticsearch:8.12.2# 创建并启动 Elasticsearch 容器
 docker run --name my-es --net elastic -p 9200:9200 -it -m 1GB...
     </div>
     <div class="meta footer">
@@ -210,7 +307,7 @@ docker run --name my-es --net elastic -p 9200:9200 -it -m 1GB...
         
 <article class="item">
   <div class="cover">
-    <a href="/2021/05/29/%E4%BD%BF%E7%94%A8%E7%BD%91%E7%AB%99%E6%94%BB%E5%87%BB%E5%AA%92%E4%BB%8B-%E5%87%AD%E6%8D%AE%E6%94%B6%E5%89%B2%E6%9C%BA%E6%94%BB%E5%87%BB%E6%96%B9%E6%B3%95/" itemprop="url" title="使用网站攻击媒介-凭据收割机攻击方法"><img data-src="https://api.yimian.xyz/img?536514"></a>
+    <a href="/2021/05/29/%E4%BD%BF%E7%94%A8%E7%BD%91%E7%AB%99%E6%94%BB%E5%87%BB%E5%AA%92%E4%BB%8B-%E5%87%AD%E6%8D%AE%E6%94%B6%E5%89%B2%E6%9C%BA%E6%94%BB%E5%87%BB%E6%96%B9%E6%B3%95/" itemprop="url" title="使用网站攻击媒介-凭据收割机攻击方法"><img data-src="https://api.yimian.xyz/img?914526"></a>
   </div>
   <div class="info">
     
@@ -271,7 +368,7 @@ docker run --name my-es --net elastic -p 9200:9200 -it -m 1GB...
         
 <article class="item">
   <div class="cover">
-    <a href="/2021/05/28/Kali%E6%B8%85%E9%99%A4Windows%E5%AF%86%E7%A0%81/" itemprop="url" title="Kali清除Windows密码"><img data-src="https://api.yimian.xyz/img?973772"></a>
+    <a href="/2021/05/28/Kali%E6%B8%85%E9%99%A4Windows%E5%AF%86%E7%A0%81/" itemprop="url" title="Kali清除Windows密码"><img data-src="https://api.yimian.xyz/img?718832"></a>
   </div>
   <div class="info">
     
@@ -322,7 +419,7 @@ hntfs-3g -o remove_hiberfile /dev/sda2...
         
 <article class="item">
   <div class="cover">
-    <a href="/2020/12/31/KMS%E6%BF%80%E6%B4%BBWindows10/" itemprop="url" title="KMS激活Windows10"><img data-src="https://api.yimian.xyz/img?336929"></a>
+    <a href="/2020/12/31/KMS%E6%BF%80%E6%B4%BBWindows10/" itemprop="url" title="KMS激活Windows10"><img data-src="https://api.yimian.xyz/img?381249"></a>
   </div>
   <div class="info">
     
@@ -367,7 +464,7 @@ https://github.com/kkkgo/KMS_VL_ALL
         
 <article class="item">
   <div class="cover">
-    <a href="/2020/11/03/Shadowsocks%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85/" itemprop="url" title="Shadowsocks一键安装"><img data-src="https://api.yimian.xyz/img?274630"></a>
+    <a href="/2020/11/03/Shadowsocks%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85/" itemprop="url" title="Shadowsocks一键安装"><img data-src="https://api.yimian.xyz/img?35253"></a>
   </div>
   <div class="info">
     
@@ -422,7 +519,7 @@ https://github.com/kkkgo/KMS_VL_ALL
         
 <article class="item">
   <div class="cover">
-    <a href="/2020/10/19/%E4%BD%BF%E7%94%A8JSProxy%E5%92%8CWorkers%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%BB%A3%E7%90%86/" itemprop="url" title="使用JSProxy和Workers免费搭建代理"><img data-src="https://api.yimian.xyz/img?519878"></a>
+    <a href="/2020/10/19/%E4%BD%BF%E7%94%A8JSProxy%E5%92%8CWorkers%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%BB%A3%E7%90%86/" itemprop="url" title="使用JSProxy和Workers免费搭建代理"><img data-src="https://api.yimian.xyz/img?552435"></a>
   </div>
   <div class="info">
     
@@ -472,7 +569,7 @@ Cloudflare Workers: https://workers.cloudflare.com
         
 <article class="item">
   <div class="cover">
-    <a href="/2020/10/18/%E4%BD%BF%E7%94%A8GitHubPages%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2/" itemprop="url" title="使用GitHubPages搭建静态页面"><img data-src="https://api.yimian.xyz/img?549464"></a>
+    <a href="/2020/10/18/%E4%BD%BF%E7%94%A8GitHubPages%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2/" itemprop="url" title="使用GitHubPages搭建静态页面"><img data-src="https://api.yimian.xyz/img?909460"></a>
   </div>
   <div class="info">
     
@@ -546,7 +643,7 @@ JSProxy 需要部署的页面在 gh-pages 分支中
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">8</span>
+        <span class="count">10</span>
         <span class="name">文章</span>
       </a>
     </div>
@@ -558,7 +655,7 @@ JSProxy 需要部署的页面在 gh-pages 分支中
     </div>
     <div class="item tags">
       <a href="/tags/">
-        <span class="count">9</span>
+        <span class="count">10</span>
         <span class="name">标签</span>
       </a>
     </div>
@@ -635,45 +732,6 @@ JSProxy 需要部署的页面在 gh-pages 分支中
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/%E4%BB%A3%E7%90%86/" title="分类于 代理">代理</a>
-</div>
-
-    <span><a href="/2020/10/18/%E4%BD%BF%E7%94%A8GitHubPages%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2/" title="使用GitHubPages搭建静态页面">使用GitHubPages搭建静态页面</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2021/05/28/Kali%E6%B8%85%E9%99%A4Windows%E5%AF%86%E7%A0%81/" title="Kali清除Windows密码">Kali清除Windows密码</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7%E7%AE%B1/" title="分类于 实用工具箱">实用工具箱</a>
-</div>
-
-    <span><a href="/2020/12/31/KMS%E6%BF%80%E6%B4%BBWindows10/" title="KMS激活Windows10">KMS激活Windows10</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/%E4%BB%A3%E7%90%86/" title="分类于 代理">代理</a>
-</div>
-
-    <span><a href="/2020/10/19/%E4%BD%BF%E7%94%A8JSProxy%E5%92%8CWorkers%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%BB%A3%E7%90%86/" title="使用JSProxy和Workers免费搭建代理">使用JSProxy和Workers免费搭建代理</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 </div>
 
     <span><a href="/2021/05/29/%E4%BD%BF%E7%94%A8%E7%BD%91%E7%AB%99%E6%94%BB%E5%87%BB%E5%AA%92%E4%BB%8B-%E5%87%AD%E6%8D%AE%E6%94%B6%E5%89%B2%E6%9C%BA%E6%94%BB%E5%87%BB%E6%96%B9%E6%B3%95/" title="使用网站攻击媒介-凭据收割机攻击方法">使用网站攻击媒介-凭据收割机攻击方法</a></span>
@@ -683,10 +741,10 @@ JSProxy 需要部署的页面在 gh-pages 分支中
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/%E7%AC%94%E8%AE%B0/" title="分类于 笔记">笔记</a>
+<a href="/categories/%E4%BB%A3%E7%90%86/" title="分类于 代理">代理</a>
 </div>
 
-    <span><a href="/2024/03/16/Elasticsearch%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="Elasticsearch常用命令">Elasticsearch常用命令</a></span>
+    <span><a href="/2020/10/18/%E4%BD%BF%E7%94%A8GitHubPages%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2/" title="使用GitHubPages搭建静态页面">使用GitHubPages搭建静态页面</a></span>
   </li>
 
       
@@ -703,10 +761,69 @@ JSProxy 需要部署的页面在 gh-pages 分支中
   <li class="item">
     
 <div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/05/28/Kali%E6%B8%85%E9%99%A4Windows%E5%AF%86%E7%A0%81/" title="Kali清除Windows密码">Kali清除Windows密码</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%AE%89%E8%A3%85/" title="分类于 安装">安装</a>
+</div>
+
+    <span><a href="/2024/03/17/Docker%E5%AE%89%E8%A3%85MongoDB/" title="Docker安装MongoDB">Docker安装MongoDB</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7%E7%AE%B1/" title="分类于 实用工具箱">实用工具箱</a>
+</div>
+
+    <span><a href="/2020/12/31/KMS%E6%BF%80%E6%B4%BBWindows10/" title="KMS激活Windows10">KMS激活Windows10</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="/categories/%E5%AE%89%E8%A3%85/" title="分类于 安装">安装</a>
 </div>
 
     <span><a href="/2024/03/15/Docker%E5%AE%89%E8%A3%85Elasticsearch&Kibana/" title="Docker安装Elasticsearch&amp;Kibana">Docker安装Elasticsearch&Kibana</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E4%BB%A3%E7%90%86/" title="分类于 代理">代理</a>
+</div>
+
+    <span><a href="/2020/10/19/%E4%BD%BF%E7%94%A8JSProxy%E5%92%8CWorkers%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%BB%A3%E7%90%86/" title="使用JSProxy和Workers免费搭建代理">使用JSProxy和Workers免费搭建代理</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%AC%94%E8%AE%B0/" title="分类于 笔记">笔记</a>
+</div>
+
+    <span><a href="/2024/03/17/MongoDB%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="MongoDB常用命令">MongoDB常用命令</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%AC%94%E8%AE%B0/" title="分类于 笔记">笔记</a>
+</div>
+
+    <span><a href="/2024/03/16/Elasticsearch%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="Elasticsearch常用命令">Elasticsearch常用命令</a></span>
   </li>
 
   </ul>
@@ -731,13 +848,13 @@ JSProxy 需要部署的页面在 gh-pages 分支中
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">9k 字</span>
+    <span title="站点总字数">11k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">8 分钟</span>
+    <span title="站点阅读时长">10 分钟</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
