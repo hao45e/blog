@@ -2453,3 +2453,11 @@ document.addEventListener(tap, function(e) {
 
 setCanvasSize();
 window.addEventListener('resize', setCanvasSize, false);
+
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?79976b76f9328c08d69bf04417b4aa1d";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
